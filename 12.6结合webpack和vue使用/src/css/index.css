@@ -1,0 +1,8 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: #f40;
+  background-image: url('../images/111.jpg');
+  font-size: 50px;
+}
