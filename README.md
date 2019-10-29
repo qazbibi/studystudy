@@ -1,1 +1,1 @@
-# vue-study
+# study-study
