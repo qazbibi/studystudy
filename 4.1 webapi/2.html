@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="dv1">
+        <p>我回到家爱好的空间啊</p>
+        <p>我回到家爱好的空间啊</p>
+        <p>我回到家爱好的空间啊</p>
+        <p>我回到家爱好的空间啊</p>
+    </div>
+    <div id="dv2">
+        <p>嘻嘻嘻哈哈哈</p>
+        <p>嘻嘻嘻哈哈哈</p>
+        <p>嘻嘻嘻哈哈哈</p>
+        <p>嘻嘻嘻哈哈哈</p>
+        <p>嘻嘻嘻哈哈哈</p>
+    </div>
+    <input type="button" value="修改p内容" id="btn">
+    <script>
+    document.getElementById("btn").onclick=function(){
+        var pObjs=document.getElementById("dv1").getElementsByTagName("p");
+        for(i=0;i<pObjs.length;i++){
+            pObjs[i].innerText="我们都是p";
+        }
+    };
+    </script>
+</body>
+</html>

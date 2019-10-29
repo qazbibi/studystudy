@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #fafafa;
+    height: 3000px;
+}
+li {
+    list-style: none;
+}
+.header {
+    height: 100px;
+    background-color: #fff;
+}
+.inner {
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    line-height: 100px;
+}
+.logo {
+    float: left;
+}
+.nav {
+    float: right;
+}
+.nav ul {
+    overflow: hidden;
+}
+.nav li {
+    float: left;
+    margin: 0 20px;
+}
+.nav li a {
+    color: #333333;
+    text-decoration: none;
+    /* font-size: 14px; */
+}
+.nav a:hover {
+    color: #2288f6;
+}
+.banner {
+    height: 620px;
+    background: transparent url(../images/banner.jpg) no-repeat top center;
+}
+.fuwu {
+    width: 1055px;
+    height: 660px;
+    margin: 75px auto 0;
+}
+.sfw {
+    margin: 0 25px;
+    border-top: 1px solid #ccc;
+}
+.sfw h3 {
+    width: 167px;
+    height: 46px;
+    margin: -15px auto 0;
+}
+.sfw p {
+    width: 830px;
+    line-height: 26px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    margin: 15px auto 0;
+}
+.xfw {
+    margin-top: 40px;
+
+}
+.xfw li {
+    width: 320px;
+    height: 470px;
+    background-color: #fff;
+    float: left;
+    border: 1px solid #e7e8e9;
+}
+.zj {
+    margin: 0 43px;
+}
+.xfw img {
+    margin: 40px 35px;
+}
+.xfw h3 {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    font-weight: normal;
+    height: 40px;
+}
+.xfw p {
+    color: #666;
+    font-size: 12px;
+    width: 235px;
+    margin: 0 auto;
+    line-height: 26px;
+}
+.xfw a {
+    display: block;
+    text-decoration: none;
+    width: 148px;
+    height: 38px;
+    border: 1px solid #ff9412;
+    border-radius: 3px;
+    color: #ff9412;
+    margin: 30px auto 0;
+    text-align: center;
+    line-height: 38px;
+    font-size: 12px;
+}
+.xfw a:hover {
+    border: 1px solid #fff;
+    background-color: #ff9412;
+    color: #fff;
+}

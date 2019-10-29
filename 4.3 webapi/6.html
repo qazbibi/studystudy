@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div {
+        width: 300px;
+        height: 300px;
+        border: 2px solid pink;
+    }
+    </style>
+</head>
+<body>
+    <input type="button" value="创建表格" id="btn">
+    <div id="dv"></div>
+    <script>
+    function my$(id){
+        return document.getElementById(id);
+    }
+    var arr = [
+        {name:"百度",href:"https://www.baidu.com"},
+        {name:"谷歌",href:"https://www.google.com"},
+        {name:"优酷",href:"https://www.youku.com"},
+        {name:"新浪",href:"https://www.sina.com"},
+        {name:"哔哩",href:"https://www.bilibili.com"}
+    ];
+    my$("btn").onclick = function(){
+        var tableObj = document.createElement("table");
+        tableObj.border = "1";
+        tableObj.cellPadding = "0";
+        tableObj.cellSpacing = "0";
+        my$("dv").appendChild(tableObj);
+        for(i=0;i<arr.length;i++){
+            var dt = arr[i];
+            var trObj = document.createElement("tr");
+            tableObj.appendChild(trObj);
+            var td1 = document.createElement("td");
+            td1.innerText = dt.name;
+            trObj.appendChild(td1);
+            var td2 = document.createElement("td");
+            td2.innerHTML = "<a href="+dt.href+">"+dt.name+"</a>"
+            trObj.appendChild(td2);
+        }
+    };
+    </script>
+</body>
+</html>

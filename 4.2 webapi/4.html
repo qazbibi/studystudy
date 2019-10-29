@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="隔行变色" id="btn">
+    <ul id="uu">
+        <li>红旗</li>
+        <li>奔驰</li>
+        <li>五菱宏光</li>
+        <li>兰博基尼</li>
+        <li>奥拓</li>
+        <li>保时捷</li>
+        <li>奥迪</li>
+        <li>布加迪威龙</li>
+    </ul>
+    <script>
+    var my$ = function(id){
+    return document.getElementById(id);
+    };
+    my$("btn").onclick = function(){
+        var lis = my$("uu").getElementsByTagName("li");
+        for(i=0;i<lis.length;i++){
+            // if(i%2==0){
+            //     lis[i].style.backgroundColor = "#ff0";
+            // }else{
+            //     lis[i].style.backgroundColor = "#f40";
+            // }
+            lis[i].style.backgroundColor = i%2==0?"#ff0":"#f40";
+        }
+    };
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        .tb {
+            width: 520px;
+            height: 280px;
+            background-color: #ff0;
+            margin: 100px auto 0;
+            position: relative;
+        }
+        .tb a {
+            width: 24px;
+            height: 36px;
+            display: block;
+            position: absolute;
+        }
+        .left {
+            left: 0;
+            top: 50%;
+            margin-top: -12px;
+            background-image: url(images/left.png);
+        }
+        .right {
+            right: 0;
+            top: 50%;
+            margin-top: -12px;
+            background-image: url(images/right.png)
+        }
+        .tb ul {
+            width: 70px;
+            height: 14px;
+            position: absolute;
+            bottom: 18px;
+            left: 50%;
+            margin-left: -35px;
+            background: rgba(255, 255, 255, .3);
+            border-radius: 8px;
+        }
+        .tb ul li {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            float: left;
+            background-color: #fff;
+            margin: 3px;
+        }
+        .tb .frist {
+            background-color: #f40;
+        }
+    </style>
+</head>
+<body>
+    <div class="tb">
+        <img src="images/tb.jpg" alt="" />
+        <a href="#" class="left"></a>
+        <a href="#" class="right"></a>
+        <ul>
+            <li class="frist"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

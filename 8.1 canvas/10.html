@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    canvas {
+      border: 1px solid #ccc;
+      display: block;
+      margin: 100px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width="600" height="400"></canvas>
+  <script>
+    var myCanvas = document.querySelector('canvas');
+    var ctx = myCanvas.getContext('2d');
+
+
+
+    var Person = function (ctx) {
+      this.ctx = ctx || document.querySelector('canvas').getContext('2d');
+      this.src = 'image/03.png';
+
+      this.canvasWidth = this.ctx.canvas.width;
+      this.canvasHeight = this.ctx.canvas.height;
+
+      this.stepSize = 10;
+      this.direction = 0;
+      this.stepX = 0;
+      this.stepY = 0;
+
+      this.init();
+    };
+    Person.prototype.init = function () {
+      var that = this;
+      this.loadImage(function (image) {
+        that.imageWidth = image.width;
+        that.imageHeight = image.height;
+
+        that.personWidth = that.imageWidth / 4;
+        that.personHeight = that.imageHeight / 4;
+
+        that.x0 = that.canvasWidth / 2 - that.personWidth / 2;
+        that.y0 = that.canvasHeight / 2 - that.personHeight / 2;
+
+        that.index = 0;
+        document.onkeydown = function (e) {
+          if (e.keyCode == 40) {
+            that.direction = 0;
+            that.stepY++;
+            that.drawImage(image);
+          } else if (e.keyCode == 37) {
+            that.direction = 1;
+            that.stepX--;
+            that.drawImage(image);
+          } else if (e.keyCode == 39) {
+            that.direction = 2;
+            that.stepX++;
+            that.drawImage(image);
+          } else if (e.keyCode == 38) {
+            that.direction = 3;
+            that.stepY--;
+            that.drawImage(image);
+          }
+        };
+        that.drawImage(image);
+      });
+    };
+    Person.prototype.loadImage = function (callback) {
+      var image = new Image();
+      image.onload = function () {
+        callback && callback(image);
+      };
+      image.src = this.src;
+    };
+    Person.prototype.drawImage = function (image) {
+      this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
+      this.ctx.drawImage(image,
+        this.index * this.personWidth, this.direction * this.personHeight,
+        this.personWidth, this.personHeight,
+        this.x0 + this.stepX * this.stepSize, this.y0 + this.stepY * this.stepSize,
+        this.personWidth, this.personHeight);
+      this.index >= 3 ? this.index = 0 : this.index++;
+    };
+
+    new Person();
+
+  </script>
+</body>
+
+</html>

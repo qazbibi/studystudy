@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var arr = ["刘备","关羽","张飞","赵云","黄忠","马超"];
+    var newArr1 = arr.join("|");
+    var newArr2 = arr.reverse();
+    console.log(newArr1);
+    console.log(newArr2);
+    console.log(arr);
+
+    var arr2 = [1500,1200,2000,2100,1800];
+    var newArr3 = arr2.filter(function(ele){
+        return ele<=2000;
+    });
+    console.log(newArr3);
+
+     var chongfu = function(){
+            var nData=[];
+            for(i=0;i<arguments.length;i++){
+                if(nData.indexOf(arguments[i]) == -1){
+                    nData.push(arguments[i]);
+                }
+            }
+            return nData;
+        };
+    var arr3 = chongfu(1,2,3,1,4,5,6,5,8);
+    console.log(arr3);
+
+    </script>
+</body>
+</html>

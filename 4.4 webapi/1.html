@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn" value="按钮">
+    <input type="button" id="btn2" value="gandiao按钮">
+    <script src="common.js"></script>
+    <script>
+        function f1(){
+        console.log("嘻嘻嘻哈哈");
+        }
+        function f2(){
+        console.log("bu嘻嘻嘻哈哈");
+        }
+        my$("btn").addEventListener("click",f1,false);
+        // my$("btn").attachEvent("onclick",function(){
+        //     console.log("嘻嘻嘻哈哈");
+        // });
+        my$("btn").addEventListener("click",f2,false);
+        my$("btn2").addEventListener("click",function(){
+            my$("btn").removeEventListener("click",f1,false)
+        },false);
+    </script>
+</body>
+</html>

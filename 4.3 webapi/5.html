@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div {
+        width: 300px;
+        height: 300px;
+        border: 2px solid pink;
+    }
+    </style>
+</head>
+<body>
+    <input type="button" value="功夫" id="btn">
+    <div id="dv"></div>
+    <script>
+    function my$(id){
+        return document.getElementById(id);
+    }
+    var kungfu = ["乾坤大挪移","无极神功","六脉神剑","打狗棒法","倚天屠龙"];
+    my$("btn").onclick = function (){
+        var ulObj = document.createElement("ul");
+        my$("dv").appendChild(ulObj);
+        for(i=0;i<kungfu.length;i++){
+            var liObj = document.createElement("li");
+            liObj.innerHTML = kungfu[i];
+            ulObj.appendChild(liObj);
+            liObj.onmouseover = mouseoverHandle;
+            liObj.onmouseout = mouseoutHandle;
+        }
+    };
+    function mouseoverHandle(){
+        this.style.backgroundColor = "yellow";
+        this.style.cursor = "pointer"
+    }
+    function mouseoutHandle(){
+    this.style.backgroundColor = "";
+    }
+    </script>
+</body>
+</html>

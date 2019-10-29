@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="拼接" id="btn"><br>
+    <input type="text" name="" id=""><br>
+    <input type="text" name="" id=""><br>
+    <input type="text" name="" id=""><br>
+    <input type="text" name="" id=""><br>
+    <input type="text" name="" id=""><br>
+    <script>
+        // document.getElementById("btn").onclick =function(){
+        //     var str="";
+        //     var inputs = document.getElementsByTagName("input");
+        //     for(var i=0;i<inputs.length;i++){
+        //          if(inputs[i].type!="button"){
+        //             str= str+inputs[i].value+"|";
+        //         }
+        //     }
+        //     console.log(str+inputs[inputs.length-1].value);
+        // };
+        document.getElementById("btn").onclick =function(){
+           var str=[];
+            var inputs = document.getElementsByTagName("input");
+            for(var i=0;i<inputs.length;i++){ 
+                if(inputs[i].type!="button" ){ 
+                    str.push(inputs[i].value); 
+                } 
+            }
+            console.log(str.join("|")); 
+        };
+    </script>
+</body>
+</html>

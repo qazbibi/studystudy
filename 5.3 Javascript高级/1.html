@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Animal(age, sex) {
+            this.age = age;
+            this.sex = sex;
+        }
+        Animal.prototype.color = "粉色";
+        Animal.prototype.eat = function () {
+            console.log("吃粽子，就吃蛋黄肉粽");
+        };
+        function Dog(age, sex, name) {
+            Animal.call(this, age, sex);
+            this.name = name;
+        }
+        Dog.prototype = new Animal;
+        var dog = new Dog(10, "男", "小明");
+        console.log(dog.name);
+        console.log(dog.age);
+        console.log(dog.sex);
+        console.log(dog.color);
+        dog.eat();
+    </script>
+</body>
+
+</html>

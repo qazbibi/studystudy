@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 100, 120, 12, 32, 54, 11, 28, 60, 95, 24];
+        arr.sort(function (a, b) {
+            if (a > b) {
+                return 1;
+            } else if (a == b) {
+                return 0;
+            } else {
+                return -1;
+            }
+        });
+        console.log(arr);
+    </script>
+</body>
+
+</html>

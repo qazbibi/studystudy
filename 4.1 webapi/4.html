@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div {
+        width: 300px;
+        height: 200px;
+        background-color: #ff4400;
+        margin: 100px auto;
+    }
+    .cls {
+        background-color: #000;
+    }
+    </style>
+</head>
+<body id="bd">
+    <input type="button" value="隐藏" id="btn">
+    <input type="button" value="关灯" id="btn2">
+    <div id="dv"></div>
+    <script>
+    function my$(id){
+        return document.getElementById(id);
+    }
+    my$("btn").onclick = function(){
+        if(my$("dv").style.display!="none"){
+            my$("dv").style.display = "none";
+            my$("btn").value = "显示";
+        }else if(my$("dv").style.display!="block"){
+            my$("dv").style.display = "block";
+            my$("btn").value = "隐藏";
+        }
+    };
+    my$("btn2").onclick = function(){
+        if(my$("bd").className!="cls"){
+            my$("bd").className = "cls";
+            this.value = "开灯";
+        }else{
+            my$("bd").className = "";
+            this.value = "关灯";
+        }
+    };
+    </script>
+</body>
+</html>

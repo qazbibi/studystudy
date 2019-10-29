@@ -1,0 +1,21 @@
+@charset "UTF-8";
+@color: red;
+@width: 100%;
+@num:4;
+
+a {
+  color: @color;
+}
+
+div {
+  color: @color;
+
+  ul {
+    display: block;
+    width: @width*@num;
+
+    li {
+      width: @width/@num;
+    }
+  }
+}

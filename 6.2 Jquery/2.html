@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 400px;
+        height: 400px;
+        background: #ff4400;
+        display: none;
+        position: absolute;
+    }
+    </style>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $("input").eq(0).click(function(){
+                $("div").show(2000);
+            });
+            $("input").eq(1).click(function () {
+                $("div").hide();
+            });
+            $("input").eq(2).click(function () {
+                $("div").animate({left:800},4000,"swing", function(){
+                    $("div").animate({ top: 800 }, 4000, "swing");
+                });
+            });  
+            $("input").eq(3).click(function () {
+                $("div").stop();
+            });      
+        });
+    </script>
+</head>
+<body>
+    <input type="button" value="显示">
+    <input type="button" value="隐藏">
+    <input type="button" value="开始">
+    <input type="button" value="结束">
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="变色" id="btn">
+    <ul id="uu">
+        <li>恶趣味无群否是的</li>
+        <li>硕大的撒各个地方</li>
+        <li>中兄次之学成在线</li>
+        <li>鬼地方个地方</li>
+        <li>结核杆菌规划</li>
+        <li>VB女半年内很舒服</li>
+        <li>兔兔用于统一</li>
+        <li>吃东西时转入地图</li>
+    </ul>
+    <script src="common.js"></script>
+    <script>
+        my$("btn").onclick = function(){
+            var count = 0;
+            var nodes = my$("uu").childNodes;
+            for(i=0;i<nodes.length;i++){
+                if(nodes[i].nodeType==1&&nodes[i].nodeName=="LI"){
+                    nodes[i].style.backgroundColor = count%2==0?"red":"yellow";
+                    count++;
+                    // 只能让隔行变红，不能变黄
+                    // nodes[i].style.backgroundColor=i%4==1?"red":"yellow";
+                }
+            }
+        };
+    </script>
+</body>
+</html>

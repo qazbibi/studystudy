@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    // Person.prototype.eat=function(){
+    //     console.log("吃吃吃，就知道吃");
+    // };
+    Person.prototype={
+        constructor:Person,
+        height:"180",
+        weight:"55kg",
+        eat:function(){
+            console.log("吃吃吃，好想吃");
+        }
+    };
+    var per1 = new Person("小黑",18);
+    var per2 = new Person("小贝",13);
+    console.dir(per1);
+    console.dir(per2);
+    console.dir(Person);
+    </script>
+</body>
+</html>

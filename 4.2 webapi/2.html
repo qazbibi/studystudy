@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.baidu.com" id="a1">baidu</a>
+    <a href="images/1.jpg" id="a2"><img src="images/1-small.jpg" alt=""></a>
+    <img src="" alt="" id="big">
+    <script>
+    document.getElementById("a1").onclick = function(){
+        alert("被点了！");
+        return false;
+    };
+    document.getElementById("a2").onclick = function(){
+        document.getElementById("big").src = this.href;
+        return false;
+    };
+    </script>
+</body>
+</html>

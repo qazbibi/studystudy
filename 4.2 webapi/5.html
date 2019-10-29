@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    li {
+        list-style: none;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <ul id="uu">
+        <li>红旗</li>
+        <li>奔驰</li>
+        <li>五菱宏光</li>
+        <li>兰博基尼</li>
+        <li>奥拓</li>
+        <li>保时捷</li>
+        <li>奥迪</li>
+        <li>布加迪威龙</li>
+    </ul>
+    <script>
+        var my$ = function (id) {
+            return document.getElementById(id);
+        };
+        var lis = document.getElementsByTagName("li");
+        for(i=0;i<lis.length;i++){
+            lis[i].onmouseover = function(){
+                this.style.backgroundColor = "#ff0";
+            };
+            lis[i].onmouseout = function(){
+                this.style.backgroundColor = "";
+            };
+        }
+    </script>
+</body>
+</html>

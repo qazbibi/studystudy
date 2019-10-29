@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var str = "whataoernUISAjndioajIJOFDJA";
+    str = str.toLocaleLowerCase();
+    var obj={};
+    for(i=0;i<str.length;i++){
+        var key = str[i];
+        if(obj[key]){
+            obj[key]++;
+        }else{
+            obj[key]=1;
+        }
+    }
+    for(var key in obj){
+        console.log(key+":"+obj[key]);
+    }
+    </script>
+</body>
+</html>

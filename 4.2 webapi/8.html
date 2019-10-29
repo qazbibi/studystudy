@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    .box {
+      width: 400px;
+      height: 300px;
+      border: 1px solid #ccc;
+      margin: 100px auto;
+      overflow: hidden;
+    }
+
+    .hd {
+      height: 45px;
+    }
+
+    .hd span {
+      display: inline-block;
+      width: 90px;
+      background-color: pink;
+      line-height: 45px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .hd span.current {
+      background-color: purple;
+    }
+
+    .bd li {
+      height: 255px;
+      background-color: purple;
+      display: none;
+    }
+
+    .bd li.current {
+      display: block;
+    }
+  </style>
+
+</head>
+<body>
+<div class="box" id="box">
+  <div class="hd">
+    <span class="current">体育</span>
+    <span>娱乐</span>
+    <span>新闻</span>
+    <span>综合</span>
+  </div>
+  <div class="bd">
+    <ul>
+      <li class="current">我是体育模块</li>
+      <li>我是娱乐模块</li>
+      <li>我是新闻模块</li>
+      <li>我是综合模块</li>
+    </ul>
+  </div>
+</div>
+<script>
+  function my$(id) {
+  return document.getElementById(id);
+  }
+  //根据id找到div
+  var box = my$("box");
+  var hd = box.getElementsByTagName("div")[0];
+  var bd = box.getElementsByTagName("div")[1];
+  var spans = hd.getElementsByTagName("span");
+  var lis = bd.getElementsByTagName("li");
+  // 循环遍历span标签
+  for(i=0;i<spans.length;i++){
+    // 给每个span标签一个索引index
+    spans[i].setAttribute("index",i);
+    //点击span标签注册事件
+    spans[i].onclick = function(){
+      //隐藏所有span样式，即清除所有span标签和li标签的class样式
+      for(j=0;j<spans.length;j++){
+        spans[j].removeAttribute("class");
+        lis[j].removeAttribute("class");
+      }
+      //显示该span，即给予被点击的span一个class属性与值
+      this.className = "current";
+      //获取该span标签的索引
+      var num = this.getAttribute("index");
+      //显示对应的li，即给予对应的li标签一个class属性与值
+      lis[num].className = "current";
+    };
+  }
+</script>
+</body>
+</html>

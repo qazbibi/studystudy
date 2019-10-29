@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .map{
+        width: 800px;
+        height: 600px;
+        background-color: #ccc;
+        position: relative;
+    }
+    </style>
+</head>
+<body>
+    <!-- 画出地图，表明样式 -->
+    <div class="map"></div>
+
+
+    <script src="food.js"></script>
+    <script src="snake.js"></script>
+    <script src="game.js"></script>
+    <script>
+    var map=document.querySelector(".map");
+    // 外部测试代码
+    // var fd=new Food();
+    // var snk=new Snake();
+    var gm=new Game(map);
+    gm.init();
+    // fd.init(map);
+    // fd.init(map);
+    // fd.init(map);
+    // fd.init(map);
+    // snk.init(map);
+    // snk.move(fd,map);
+    // snk.init(map);
+    // snk.move(fd,map);
+    // snk.init(map);
+    // snk.move(fd,map);
+    // snk.init(map);
+    // function f1(){
+    //     snk.move(fd,map);
+    //     snk.init(map);
+    // }
+    // setInterval(f1,100);
+    // console.log(fd.x+"==="+fd.y);
+    // console.log(fd.width);
+
+    </script>
+</body>
+</html>

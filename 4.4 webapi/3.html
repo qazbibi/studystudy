@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn">
+    <script src="common.js"></script>
+    <script>
+        my$("btn").onclick = f1;
+        my$("btn").onmouseover = f1;
+        my$("btn").onmouseout = f1;
+        function f1(){
+            switch(arguments[0].type){
+                case "click": alert("哈哈哈哈");break;
+                case "mouseover": this.style.backgroundColor="red";break;
+                case "mouseout": this.style.backgroundColor="";break;
+            }
+        }
+    </script>
+</body>
+</html>

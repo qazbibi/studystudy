@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 183px;
+            height: 130px;
+            overflow: hidden;
+            position: relative;
+        }
+        div img {
+            width: 193px;
+            height: 130; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.5s;
+        }
+        div img:hover {
+            left: -10px;  /* 也可以用margin-left: -10px;实现  */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="1.jpg" alt="">
+    </div>
+</body>
+</html>

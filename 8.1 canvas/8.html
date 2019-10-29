@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    canvas {
+      border: 1px solid #ccc;
+      display: block;
+      margin: 100px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width="600" height="400"></canvas>
+  <script>
+    var myCanvas = document.querySelector('canvas');
+    var ctx = myCanvas.getContext('2d');
+
+    var PieChart = function (ctx) {
+      this.ctx = ctx || document.querySelector('canvas').getContext('2d');
+      this.w = this.ctx.canvas.width;
+      this.h = this.ctx.canvas.height;
+      this.x0 = this.w / 2 + 60;
+      this.y0 = this.h / 2;
+      this.radius = 150;
+      this.outLine = 20;
+      this.rectW = 30;
+      this.rectH = 16;
+      this.space = 20;
+    };
+    PieChart.prototype.init = function (data) {
+      this.drawPie(data);
+    };
+    PieChart.prototype.drawPie = function (data) {
+      var that = this;
+      var angleList = this.transformAngle(data);
+      var startAngle = 0;
+      angleList.forEach((item, i) => {
+        var endAngle = startAngle + item.angle;
+        ctx.beginPath();
+        ctx.moveTo(that.x0, that.y0);
+        ctx.arc(that.x0, that.y0, that.radius, startAngle, endAngle);
+        ctx.fillStyle = 'rgb(' + parseInt(Math.random() * 256) + ', ' + parseInt(Math.random() * 256) + ',' + parseInt(Math.random() * 256) + ')';
+        ctx.fill();
+        item.color = ctx.fillStyle;
+        that.drawTitle(startAngle, item.angle, item.color, item.title);
+        that.drawDesc(i, item.title);
+        startAngle = endAngle;
+      });
+    };
+    PieChart.prototype.drawTitle = function (startAngle, angle, color, title) {
+      var edge = this.radius + this.outLine;
+      var edgeX = Math.cos(startAngle + angle / 2) * edge;
+      var edgeY = Math.sin(startAngle + angle / 2) * edge;
+      var outX = this.x0 + edgeX;
+      var outY = this.y0 + edgeY;
+      this.ctx.beginPath();
+      this.ctx.moveTo(this.x0, this.y0);
+      this.ctx.lineTo(outX, outY);
+      this.ctx.strokeStyle = color;
+      this.ctx.textBaseline = 'bottom';
+      this.ctx.font = '14px Microsoft YaHei';
+      var textWidth = this.ctx.measureText(title).width;
+      if (outX > this.x0) {
+        this.ctx.lineTo(outX + textWidth, outY);
+        this.ctx.textAlign = 'left';
+      } else {
+        this.ctx.lineTo(outX - textWidth, outY);
+        this.ctx.textAlign = 'right';
+      }
+      this.ctx.stroke();
+      this.ctx.textBaseline = 'bottom';
+      this.ctx.font = '14px Microsoft YaHei';
+      this.ctx.fillText(title, outX, outY);
+    };
+    PieChart.prototype.drawDesc = function (index, title) {
+      this.ctx.fillRect(this.space, this.space + index * (this.rectH + 10), this.rectW, this.rectH);
+      this.ctx.beginPath();
+      this.ctx.textAlign = 'left';
+      this.ctx.textBaseline = 'top';
+      this.ctx.font = '12px Microsoft YaHei';
+      this.ctx.fillText(title, this.space + this.rectW + 10, this.space + index * (this.rectH + 10));
+    };
+    PieChart.prototype.transformAngle = function (data) {
+      var total = 0;
+      data.forEach((item, i) => {
+        total += item.num;
+      });
+      data.forEach((item, i) => {
+        var angle = item.num / total * Math.PI * 2;
+        item.angle = angle;
+      });
+      return data;
+    };
+    var data = [
+      {
+        title: '15-20岁',
+        num: 6
+      },
+      {
+        title: '20-25岁',
+        num: 30
+      },
+      {
+        title: '25-30岁',
+        num: 10
+      },
+      {
+        title: '30岁以上',
+        num: 8
+      }
+    ];
+    var pieChart = new PieChart;
+    pieChart.init(data);
+  </script>
+</body>
+
+</html>

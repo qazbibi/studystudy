@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .map {
+            width: 1200px;
+            height: 800px;
+            background-color: #ccc;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="map"></div>
+    <script>
+    (function(window){
+        function Random(){
+        }
+        Random.prototype.getRandom=function(min,max){
+            return Math.floor(Math.random()*(max-min)+min);
+        };
+        window.Random=new Random();
+    })(window);
+    (function(window){
+        var map=document.querySelector(".map");
+        function Food(width,height,color){
+            this.width=width||20;
+            this.height=height||20;
+            this.x=0;
+            this.y=0;
+            this.color=color||"green";
+            this.element=document.createElement("div");
+        }
+        Food.prototype.init=function(map){
+            var div=this.element;
+            div.style.position="absolute";
+            div.style.width=this.width+"px";
+            div.style.height=this.height+"px";
+            div.style.backgroundColor=this.color;
+            map.appendChild(div);
+            this.render(map);
+        };
+        Food.prototype.render=function(map){
+            var x=Random.getRandom(0,map.offsetWidth/this.width)*this.width;
+            var y=Random.getRandom(0,map.offsetHeight/this.height)*this.height;
+            this.x=x;
+            this.y=y;
+            var div=this.element;
+            div.style.left=x+"px";
+            div.style.top=y+"px";
+        };
+        var fd = new Food(20,20,"red");
+        fd.init(map);
+    })(window);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="显示弹窗" id="btn">
+    <input type="button" value="显示图片" id="btn1">    
+    <input type="button" value="修改p内容" id="btn2">    
+    <input type="button" value="修改a内容" id="btn3">    
+    <img src="" alt="" id="im">
+    <p id="p1">我是一个p标签</p>
+    <a href="#" id="a1">空地址</a>
+    <script>
+    document.getElementById("btn").onclick=function(){
+        alert("wahha哈哈哈哈");
+    };
+    var btnObj=document.getElementById("btn1");
+    btnObj.onclick=function(){
+        var imObj=document.getElementById("im");
+        imObj.src="images/1.jpg";
+        imObj.width="300";
+        imObj.height = "250";
+    };
+    document.getElementById("btn2").onclick=function(){
+        document.getElementById("p1").innerText="这是一个p";
+    };
+    document.getElementById("btn3").onclick = function () {
+        document.getElementById("a1").innerText="百度";
+        document.getElementById("a1").href="https://www.baidu.com";        
+    };
+    </script>
+</body>
+</html>

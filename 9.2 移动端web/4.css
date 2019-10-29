@@ -1,0 +1,14 @@
+@charset "UTF-8";
+a {
+  color: red;
+}
+div {
+  color: red;
+}
+div ul {
+  display: block;
+  width: 400%;
+}
+div ul li {
+  width: 25%;
+}
