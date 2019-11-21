@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Source Han Sans SC';
+  /* src: url('./src/font/SourceHanSansSC-Normal.ttf'); */
+  /* src: url('./src/font/SourceHanSansSC-Bold.ttf'); */
+  src: url('./src/font/SourceHanSansSC-Medium.ttf');
+  /* src: url('./src/font/SourceHanSansSC-Regular.ttf'); */
+  
+  font-weight: Normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Source Han Sans SC";
+}
